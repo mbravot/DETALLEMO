@@ -1,0 +1,29 @@
+# Build con tu Dockerfile y despliegue a Cloud Run
+# Proyecto: gestion-la-hornilla | Servicio: detallemo | Región: us-central1
+
+steps:
+  # 1. Construir la imagen con el Dockerfile del repo
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/gestion-la-hornilla/detallemo', '.']
+
+  # 2. Subir la imagen a Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/gestion-la-hornilla/detallemo']
+
+  # 3. Desplegar en Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'detallemo'
+      - '--image'
+      - 'gcr.io/gestion-la-hornilla/detallemo'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+
+images:
+  - 'gcr.io/gestion-la-hornilla/detallemo'

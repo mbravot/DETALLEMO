@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar la aplicación
 COPY app.py .
 COPY templates/ templates/
+COPY static/ static/
 
 # Cloud Run asigna el puerto vía variable PORT (por defecto 8080)
 ENV PORT=8080
