@@ -1,0 +1,15 @@
+# No enviar al build de Cloud Build (acelera el deploy)
+.git
+.gitignore
+venv
+.venv
+env
+.venv
+__pycache__
+*.pyc
+.env
+.env.*
+.idea
+.vscode
+*.md
+.DS_Store

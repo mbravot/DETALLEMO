@@ -1,0 +1,33 @@
+# Entorno virtual
+venv/
+.venv/
+env/
+.env/
+FlaskWebVenv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Variables de entorno (credenciales)
+.env
+.env.local
+*.env
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs y temporales
+*.log
+*.tmp
+.cache/
